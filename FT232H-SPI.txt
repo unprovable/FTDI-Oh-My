@@ -1,0 +1,12 @@
+The FT232H works with flashrom. Use the following command to read the ROM off a chip connected to the FT232H:
+
+flashrom -p ft2232_spi:type=232H -r path/to/output/file.dat
+
+also use -w to write and --erase to erase ROM...
+
+pinout:
+
+D0 == SCK (serial clock)
+D1 == MOSI (Master Out Slave In)
+D2 == MISO (Master In Slave Out)
+D3 == CS (Chip Select)

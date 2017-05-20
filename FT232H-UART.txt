@@ -1,0 +1,13 @@
+It just works...
+
+plug in device and run `dmesg` and you'll see the device. Usually /dev/ttyUSB0 on linux (could be ttyUSBX if you already have other serial-type devices attached...)
+
+screen /dev/ttyUSB0 115200
+
+to connect. You can also set 115200 to any other baud rate. Most common are 115200, 9600, 57600.
+
+pinout: 
+
+D0 == Tx
+D1 == Rx
+

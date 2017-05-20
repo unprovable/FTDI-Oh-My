@@ -1,0 +1,26 @@
+JTAG:
+
+Use OpenOCD with the included config file (FT232H-OpenOCD.cfg). It may need some tweaking, so I've annotated that as applicable.
+
+Start openOCD server as this:
+
+sudo /usr/local/bin/openocd -c telnet_port 4444 -f path/to/FT232H-OpenOCD.cfg -f path/to/targe/config.cfg
+
+(added the prefix as fedora doesn't sometimes see it...)
+
+pinout:
+
+D0 == TCK
+D1 == TDI
+D2 == TDO
+D3 == TMS
+
+SWD:
+
+So, we now need to take into account SWDIO as being both TDI and TDO. So, connect SWDIO to TDO, and run a resistor of between 220 and 470Ohm from SWDIO to TDI. This will let you do SWD on a three pin connection. 
+
+D0 == TCK
+D1 == SWDIO via resistor
+D2 == SWDIO
+D3 == TMS
+
