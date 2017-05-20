@@ -4,7 +4,11 @@ Use OpenOCD with the included config file (FT232H-OpenOCD.cfg). It may need some
 
 Start openOCD server as this:
 
-sudo /usr/local/bin/openocd -c telnet_port 4444 -f path/to/FT232H-OpenOCD.cfg -f path/to/targe/config.cfg
+sudo /usr/local/bin/openocd -f ./FT232H-openOCD.cfg -f path/to/target/config.cfg
+
+Example:
+
+sudo /usr/local/bin/openocd -f ./FT232H-openOCD.cfg -f target/stm32f2x.cfg
 
 (added the prefix as fedora doesn't sometimes see it...)
 
